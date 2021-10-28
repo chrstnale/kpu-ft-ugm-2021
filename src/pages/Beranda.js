@@ -11,9 +11,9 @@ export default function Beranda(){
             Punya Weka
         </Container>
     );
-
 }
 
 const Container = styled.div`
     // Kode CSS //
+
 `

@@ -22,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
         --delay-multiplier: 0.1s;
         --spacer: 1rem;
     }
+
+    p{
+        font-size: 20px
+    }
 `;
 
 export default GlobalStyle;
