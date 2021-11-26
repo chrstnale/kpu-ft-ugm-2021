@@ -76,17 +76,17 @@ export default function Beranda(){
 
                 <div className="desc1 text-center">
                     <div className="no"><h5 className="no-number">1</h5></div>
-                    <h2 className="font-squids">ADIAHMAD IRFAN ZIDNY</h2>
-                    <p>Kita kawan, bukan lawan!</p>
+                    <h2 className="font-squids">NURHADI</h2>
+                    <p>Koalisi Indonesia<br/>Tronjal Tronjol<br/>Maha Asik</p>
                 </div>
 
                 <div className="desc2 text-center">
                     <div className="no"><h5 className="no-number">2</h5></div>
-                    <h2 className="font-squids">ANJU GERALD</h2>
+                    <h2 className="font-squids">RANGGA SASANA</h2>
                     <p>
-                        Tak janji nonstop, yang pasti top
-                        <br/>Tak banyak berkelit, penting konkrit
-                        <br/>Tak perlu membantah, pasti meriah
+                        Corona berasal dari matahari
+                        <br/>Masyarakat aman dari Titan
+                        <br/>Sunda Empire bukan Sunda Nusantara
                     </p>
                 </div>
 

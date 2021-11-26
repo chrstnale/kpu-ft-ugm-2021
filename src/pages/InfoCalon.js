@@ -38,8 +38,8 @@ export default function InfoCalon(){
     
     <div class="content-container" >
       <div class="button-container">
-        <button id="button1" class="button" onClick={clickHandler}><UnoCard name="ADIAHMAD IRFAN ZIDNY" no="1" src={Calon_1}/></button>
-        <button id="button2" class="button" onClick={clickHandler2}><UnoCard name="ANJU GERALD" no="2" src={Calon_2}/></button>
+        <button id="button1" class="button" onClick={clickHandler}><UnoCard name="NURHADI" no="1" src={Calon_1}/></button>
+        <button id="button2" class="button" onClick={clickHandler2}><UnoCard name="RANGGA SASANA" no="2" src={Calon_2}/></button>
       </div>  
       
       <div class="image-background">
@@ -51,11 +51,11 @@ export default function InfoCalon(){
         <div class="modal-content" onClick={clickHandler}>
             <div class="modal-header">
                 <span class="close" onClick={clickHandler}>&times;</span>
-                <h2>ADIAHMAD IRFAN ZIDNY</h2>
+                <h2>NURHADI</h2>
             </div>
 
             <div class="modal-subheader">
-                <h3>Departemen Teknik Elektro dan Teknologi Informasi</h3>
+                <h3>Departemen Tronjal Tronjol</h3>
             </div>
 
             <div class="modal-image">
@@ -85,11 +85,11 @@ export default function InfoCalon(){
         <div class="modal-content" onClick={clickHandler2}>
             <div class="modal-header">
                 <span class="close" onClick={clickHandler2}>&times;</span>
-                <h2>ANJU GERALD</h2>
+                <h2>RANGGA SASANA</h2>
             </div>
 
             <div class="modal-subheader">
-                <h3>Departemen Teknik Elektro dan Teknologi Informasi</h3>
+                <h3>Departemen Sunda Empire</h3>
             </div>
 
             <div class="modal-image">
