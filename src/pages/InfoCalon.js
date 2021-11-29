@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import {
-  Dice,
-  Calon_1,
-  Calon_2,
-  ChooseCandidate,
-} from "../assets/images/imgIndex"
-import CVAnjuGerald from "../assets/cv-anju-gerald.pdf"
+    Dice,
+    Calon_1, 
+    Calon_2,
+    ChooseCandidate,
+    CV_Anju,
+}from "../assets/images/imgIndex"
 import { Helmet } from "react-helmet";
 import UnoCard from "../components/UnoCard";
-import Fade from "react-reveal/Fade"
 
-
-export default function InfoCalon() {
+export default function InfoCalon(){
 
   const [isClicked, setIsClicked] = React.useState(false);
   const [isClicked2, setIsClicked2] = React.useState(false);
@@ -20,177 +18,157 @@ export default function InfoCalon() {
   const clickHandler = () => setIsClicked(clicked => !clicked);
   const clickHandler2 = () => setIsClicked2(clicked => !clicked);
 
-  return (
+  return(
     <>
-      <Helmet>
-        <title>Calon Ketua - BEM KMFT UGM</title>
-      </Helmet>
-      <Container isClicked={isClicked} isClicked2={isClicked2}>
-        <div class="background-fixed">
-          <div class="dice">
-            {/* <img src={Dice} alt="Dice" style={{ width: "40vw" }} /> */}
-          </div>
+    <Helmet>
+      <title>Calon Ketua - BEM KMFT UGM</title>
+    </Helmet>
+    <Container isClicked={isClicked} isClicked2={isClicked2}> 
+     <div class="background-fixed">
+       <div class="dice">
+          <img src={Dice} alt="Dice" style={{width: "40vw"}}/>
+       </div>
+        
+    </div>
 
+    <div class="title-container">
+        <div class="page-title">
+            <h1 style={{fontSize: "calc(0.5rem + 4.5vw)"}}>Calon Ketua</h1>
         </div>
+    </div>
+    
+    <div class="content-container" >
+      <div class="button-container">
+        <button id="button1" class="button" onClick={clickHandler}><UnoCard name="ADIAHMAD IRFAN ZIDNY" no="1" src={Calon_1}/></button>
+        <button id="button2" class="button" onClick={clickHandler2}><UnoCard name="ANJU GERALD" no="2" src={Calon_2}/></button>
+      </div>  
+      
+      <div class="image-background">
+          <img src={ChooseCandidate} alt="Choose A Candidate" style={{maxWidth: "100%", height: "auto"}}/>
+      </div>  
+    </div>
 
-        <div class="title-container">
-          <div class="page-title">
-            <Fade top>
-              <h1 style={{ fontSize: "calc(0.5rem + 4vmin)" }} >Calon Ketua <br /><span style={{color:"var(--color-pink)"}}>BEM KMFT UGM 2022</span></h1>
-            </Fade>
-          </div>
-        </div>
-
-        <div class="content-container" >
-          <div class="button-container">
-            <Fade left>
-              <UnoCard onClick={clickHandler} name="ADIAHMAD IRFAN ZIDNY" no="1" src={Calon_1} />
-            </Fade>
-            <Fade right>
-              <UnoCard onClick={clickHandler2} name="ANJU GERALD" no="2" src={Calon_2} />
-            </Fade >
-          </div>
-
-          <div class="image-background">
-            <Fade bottom>
-              <img src={ChooseCandidate} alt="Choose A Candidate" style={{ maxWidth: "100%", height: "auto" }} />
-            </Fade>
-          </div>
-        </div>
-
-        <div id="Candidate1" class="modal-popup" onClick={clickHandler}>
-          <div class="modal-content" onClick={clickHandler}>
+    <div id="Candidate1" class="modal-popup" onClick={clickHandler}>
+        <div class="modal-content" onClick={clickHandler}>
             <div class="modal-header">
-              <span class="close" onClick={clickHandler}>&times;</span>
-              <h2>ADIAHMAD IRFAN ZIDNY</h2>
+                <span class="close" onClick={clickHandler}>&times;</span>
+                <h2>ADIAHMAD IRFAN ZIDNY</h2>
             </div>
 
             <div class="modal-subheader">
-              <h4>Departemen Teknik Arsitektur dan Perencanaan</h4>
+                <h3>DTAP</h3>
             </div>
 
-            <div class="modal-video">
-              <iframe src="https://drive.google.com/file/d/1UMuHAJo4FczD-Nh7SyfZpA6N4jWqjH6o/preview" width="640" height="480" allow="autoplay"></iframe>            
-            </div>
-
-            <div class="modal-body">
-              <h3>Profil</h3>
-              <p>Teknik lahir dari berbagai kekuatan. Dibesarkan tulus oleh keberagaman. Memimpikan keterbukaan, kesetaraan, ketangguhan, hingga kesejahteraan. Perjalanannya pelik, tidak mudah seperti yang dibayangkan. Namun, semua ini dapat dirajut bersama melalui orientasi dampak berkelanjutan.
-                <br /><br />Ini bukan imajinasi tanpa pasti, bukan juga sekadar cerita ilusi, apalagi soal egoisme pribadi.
-                <br /><br />Adiahmad Irfan Zidny, Calon Ketua BEM KMFT UGM no. 1 percaya, dampak luas dapat dirasa ketika kita semua membersamainya, kan?
-                <br /><br />Yang pasti, Teknik butuh kita. #KarenaKitaTeknik. TEKNIK JAYA!</p>
-                <h3>Visi</h3>
-              <p>BEM KMFT UGM sebagai organisasi mahasiswa memaknai kebermanfaatan dan mensinergikan keberagaman yang berkelanjutan bagi Teknik, UGM, dan Indonesia
-              </p>
-
-              <h3>Misi</h3>
-              <p>
-                <ul>
-                  <li>
-                    Membangun tata kelola organisasi dan sumber daya yang menyenangkan dan terpadu
-                  </li>
-                  <li>
-                  Menjalin hubungan kelembagaan sinergis berkala dengan berbagai elemen kelembagaan.
-                  </li>
-                  <li>
-                  Melaksanakan integrasi program dan kegiatan yang tepat guna berdasarkan keinginan dan kebutuhan mahasiswa FT UGM.
-                  </li>
-                  <li>
-                  Menyediakan ruang interaktif dan informatif melalui pengembangan dan pengelolaan media.
-                  </li>
-                  <li>
-                  Menghadirkan gerakan mahasiswa konstruktif dan substantif berdasarkan pemikiran kritis dan kompetensi keilmuan.
-                  </li>
-                  <li>
-                  Mengakomodasi kegiatan kemahasiswaan bermakna berdasarkan kebutuhan, minat, dan bakat mahasiswa FT UGM.
-                  </li>
-                  <li>
-                  Mewujudkan kepekaan sosial nyata terhadap sesama manusia dan lingkungan melalui berbagai bentuk pemberdayaan.
-                  </li>
-                </ul>
-              </p>
-
-            
-            </div>
-
-
-
-            <div class="modal-footer">
-              <h3>KPU FT UGM 2021</h3>
-            </div>
-          </div>
-        </div>
-
-        <div id="Candidate2" class="modal-popup" onClick={clickHandler2}>
-          <div class="modal-content" onClick={clickHandler2}>
-            <div class="modal-header">
-              <span class="close" onClick={clickHandler2}>&times;</span>
-              <h2>ANJU GERALD</h2>
-            </div>
-
-            <div class="modal-subheader">
-              <h4>Departemen Teknik Mesin dan Industri</h4>
-            </div>
-
-            <div class="modal-video">
-              <iframe src="https://drive.google.com/file/d/1y3GZoSAdIPZ6RGIngSO7nLxBoFdU_FaL/preview" width="640" height="480" allow="autoplay"></iframe>
-            </div>
-
-            <div class="modal-body">
-              <h3>Profil</h3>
-              <p>Sebuah gagasan tidak akan hadir tanpa kemerdekaan, sebuah gerakan tidak akan hadir tanpa kesetaraan, sebuah entitas tidak akan hadir tanpa solidaritas. Dan tentu, semua ini tidak mungkin berjalan tanpa kemanusiaan. Dengan pertimbangan rekan dalam persaudaraan, itulah yang dirangkum Anju Gerald, calon ketua BEM KMFT UGM nomor urut dua. Karenapun jabatan hanya sementara, namun peninggalan adalah selama-lamanya, maka ini bukanlah akhir dari segala-galanya, namun permulaan dari apa yang ingin kita bangun kedepannya!
-                <br /><br />Kemahasiswaan, ketenagakerjaan, kebudayaan, dan teknologi adalah isu utamanya, berlandaskan Human-Centered Design mengaarah ke empowerment, emancipation, dan cooperation tujuannya. Karena tentang ini bukan aku, bukan kamu, tapi kita. Karena aku, kamu, kita, TEKNIK JAYA!</p>
-               
-              <h3>Visi</h3>
-              <p>Menjadi Pelayan FT UGM</p>
-              
-              
-              <h3>Misi</h3>
-              <p>
-              <ul>
-                <li>
-                Wadah kebebasan akademik dengan semangat tri dharma perguruan tinggi di KMFT UGM
-                </li>
-                <li>
-                Wadah  perjuangan akan hak-hak mahasiswa teknik yang belum, sudah, dan seharusnya didapatkan
-                </li>
-                <li>
-                Wadah untuk mewujudkan solidaritas dengan segala kerja-kerja kreatif di KMFT UGM
-                </li>
-              </ul>
-              </p>
-              <h3>Daftar Riwayat Hidup</h3>
-              <div class="modal-cv">
-                <iframe
-                  title="Daftar Riwayat Hidup Anju Gerald"
-                  src={CVAnjuGerald}
-                  width="100%"
-                  height="500px"
-                  allow="autoplay"
-                ></iframe>
+            <div class="modal-imagecontainer">
+              <div class="modal-image">
+                <img src={Calon_1} alt="Candidate 1 Picture"/>
+              </div> 
+              <div class="modal-visimisi">
+                <div class="modal-visi">
+                  <h3>Visi</h3>
+                  <p>"BEM KMFT UGM sebagai organisasi mahasiswa memaknai kebermanfaatan dan mensinergikan keberagaman yang berkelanjutan bagi Teknik UGM dan Indonesia"</p>
                 </div>
+                <div class="modal-misi">
+                  <h3>Misi</h3>
+                  <li>Membangun tata kelola organisasi dan sumber daya yang menyenangkan dan terpadu sebagai nilai tambah lembaga.</li>
+                  <li>Menjalin hubungan kelembagaan sinergis berkala di dalam dan luar kampus.</li>
+                  <li>Mengakomodasi program dan kegiatan tepat guna dan terintegrasi berdasarkan keinginan dan kebutuhan mahasiswa Teknik UGM.</li>
+                  <li>Menyediakan ruang interaktif dan informatif melalui pengembangan dan pengelolaan media.</li>
+                  <li>Menghadirkan gerakan mahasiswa konstruktif dan substantif berdasarkan pemikiran kritis dan kompetensi keilmuan.</li>
+                  <li>Mewujudkan kepekaan sosial nyata terhadap sesama manusia dan lingkungan melalui berbagai bentuk pemberdayaan.</li>
+                </div>
+              </div>
             </div>
 
-            <div class="modal-footer">
-              <h3>KPU FT UGM 2021</h3>
+            <div class="modal-body">
+              <h3>Profil</h3>
+                <p>Mahasiswa Teknik UGM 2019 membawa gagasan keberlanjutan bagi BEM KMFT dan Teknik UGM</p>
+                <p>Kita Kawan, bukan lawan!</p>
+                <p>#KarenaKitaTeknik</p>
+                <p>#TeknikBersihBerkah</p>
+              <h3>Pengalaman Organisasi</h3>
+                <li>Menteri Hubungan Masyarakat BEM KMFT UGM 2021</li>
+                <li>Staf Divisi Hubungan Masyarakat HMTPWK UGM</li>
+                <li>Ketua MPK SMA Negeri 81 Jakarta</li>
+              <h3>CV</h3>
+              <div class="modal-cv">
+                <img src = {Calon_1} alt="CV di sini"/>
+              </div>
             </div>
-          </div>
+
+            <div class="modal-video">
+                <iframe width="560" height="315" src="https://drive.google.com/file/d/1UMuHAJo4FczD-Nh7SyfZpA6N4jWqjH6o/preview" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="modal-footer">
+                <h3>KPU FT UGM 2021</h3>
+            </div>
         </div>
-      </Container>
+    </div>
+
+    <div id="Candidate2" class="modal-popup" onClick={clickHandler2}>
+        <div class="modal-content" onClick={clickHandler2}>
+            <div class="modal-header">
+                <span class="close" onClick={clickHandler2}>&times;</span>
+                <h2>ANJU GERALD</h2>
+            </div>
+
+            <div class="modal-subheader">
+                <h3>DTMI</h3>
+            </div>
+
+            <div class="modal-imagecontainer">
+              <div class="modal-image">
+                <img src={Calon_2} alt="Candidate 2 Picture"/>
+              </div> 
+              <div class="modal-visimisi">
+                <div class="modal-visi">
+                  <h3>Visi</h3>
+                  <p>"Menjadi pelayan KMFT"</p>
+                </div>
+                <div class="modal-misi">
+                  <h3>Misi</h3>
+                  <li>Wadah kebebasan akademik dengan semangat tri dharma perguruan tinggi di KMFT UGM</li>
+                  <li>Wadah perjuangan akan hak-hak mahasiswa teknik yang belum, sudah, dan seharusnya didapatkan</li>
+                  <li>Wadah untuk mewujudkan solidaritas dengan segala kerja-kerja kreatif di KMFT UGM</li>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-body">
+              <h3>Profil</h3>
+                <p>Sebuah gagasan tidak akan hadir tanpa kemerdekaan, sebuah gerakan tidak akan hadir tanpa kesetaraan, sebuah entitas tidak akan hadir tanpa solidaritas. Dan tentu, semua ini tidak mungkin berjalan tanpa kemanusiaan. Dengan pertimbangan rekan dalam persaudaraan, itulah yang dirangkum Anju Gerald, calon ketua BEM KMFT UGM nomor urut dua. Karenapun jabatan hanya sementara, namun peninggalan adalah selama-lamanya, maka ini bukanlah akhir dari segala-galanya, namun permulaan dari apa yang ingin kita bangun kedepannya!</p>
+                <p>Kemahasiswaan, ketenagakerjaan, kebudayaan, dan teknologi adalah isu utamanya, berlandaskan Human-Centered Design mengaarah ke empowerment, emancipation, dan cooperation tujuannya. Karena tentang ini bukan aku, bukan kamu, tapi kita. Karena aku, kamu, kita, TEKNIK JAYA!</p>
+              <h3>Pengalaman Organisasi</h3>
+                <li>Staff divisi Seni dan Propaganda KMTM FT UGM (2020-2021)</li>
+                <li>Staff Kedirjenan Pergerakan Kementerian Adkesma BEM KMFT UGM</li>
+                <li>Dirjen Manajemen isu Kementerian Aksi dan Propaganda BEM KM UGM</li>
+                <li>Staff Direktorat PSDM HopeHelps UGM</li>
+                <li>Staff Networking and Foreign Affairs Libertas Fraternity</li>
+              <h3>CV</h3>
+              <div class="modal-cv">
+                <img src = {CV_Anju} alt="CV di sini"/>
+              </div>
+            </div>
+
+            <div class="modal-video">
+                <iframe width="560" height="315" src="https://drive.google.com/file/d/1y3GZoSAdIPZ6RGIngSO7nLxBoFdU_FaL/preview" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="modal-footer">
+                <h3>KPU FT UGM 2021</h3>
+            </div>
+        </div>
+    </div>
+    </Container>
     </>
-  )
+    )
 }
 
 const Container = styled.div`
 background-color: var(--color-darkblue);
 font-family: GameofSquids;
 overflow: hidden;
-padding: 5vmin 10vmin;
-min-height: 95vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
 
 * {
     margin: 0;
@@ -223,9 +201,21 @@ align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
+  max-width: 80%;
   margin: auto;
 }
+
+//Tombol Kandidat
+.button {
+  border: none;
+  background-size: cover;
+  border-radius: 12px;
+  text-decoration: none;
+  margin: 10px 10% 10px 10%;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
 
 .button:hover{
   transform: scale(1.02);
@@ -249,7 +239,7 @@ align-items: center;
 
 //Uno
 .image-background{
-  width: calc(100px + 50vmin);
+  width: calc(100px + 40vw);
   position: relative;
   padding: 6% 0%;
   margin: auto;
@@ -304,7 +294,7 @@ align-items: center;
   margin: 7% auto;
   position: relative;
   padding: 1% 4% 3% 4%;
-  border: 5px solid var(--color-blue);
+  border: 5px solid rgba(251, 36, 129, 0.9);
   width: 70%;
   animation-name: animatetop;
   animation-duration: 1s;
@@ -316,51 +306,113 @@ align-items: center;
   text-align: center;
   margin: 2% 0px 0px 0px;
   padding: 0.5% 10%;
+  background-color: var(--color-pink);
   border-radius: 12px 12px 0px 0px;
+}
 
-  h2{
-    font-size: calc(0.5rem + 5vmin);
-    color: var(--color-pink);
-  }
+.modal-header h2 {
+  font-size: calc(0.5rem + 1.25vw);
 }
 
 //Departemen
 .modal-subheader{
   text-align: center;
-  /* background-color: var(--color-yellow); */
+  background-color: var(--color-yellow);
   border-radius: 0px 0px 12px 12px;
   padding: 0.5% 10%;
   margin: auto;
 }
 
-.modal-image{
+.modal-subheader h3 {
+  font-size: calc(0.5rem + 0.7vw);
+}
+
+.modal-imagecontainer{
   position: relative;
   display: flex;
   margin: 2% auto;
+  justify-content: center;
+  width: 100%;
+  height: calc(100px + 20vw);
+  //border: 5px solid red;
+}
+
+.modal-image {
+  position: relative;
+  display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 12px;
   background-color: #FFFFFF;
-  width: 40vmin;
+  width: 50%;
+  height: auto;
+  //border: 5px solid blue;
 }
 
 .modal-image img {
-  width: 100%;
+  position: relative;
   height: auto; 
-  /* width: calc(100px + 10vw); */
+  width: calc(125px + 10vw);
+}
+
+.modal-visimisi{
+  //border: 5px solid yellow;
+  width: 50%;
+  padding: 0% 2%;
+}
+
+.modal-visimisi h3 {
+  font-size: calc(0.5rem + 1.25vw);
+  font-family: GameOfSquids;
+  text-align: justify;
+}
+
+.modal-visimisi p {
+  font-size: calc(0.5rem + 0.5vw);
+}
+
+.modal-visimisi li {
+  font-size: calc(0.5rem + 0.5vw);
+  text-align: justify;
+  margin: 0% 0% 0% 4%;
+}
+
+.modal-visi {
+  overflow-y: auto;
+  height: 50%;
+}
+
+.modal-misi {
+  list-style-type: square;
+  //list-style-position: inside;
+  overflow-y: auto;
+  height: 50%;
+  margin: 0% 0% 0% 0%;
+}
+
+.modal-misi h3 {
+  margin: 1% 0% 0% 0%;
 }
 
 .modal-body{
   text-align: justify;
+  font-size: 1.5vw;
   margin: 2% auto;
 }
 
 .modal-body p{
   line-height: 150%;
+  font-size: calc(0.5rem + 0.5vw);
+}
+
+.modal-body li {  
+  font-size: calc(0.5rem + 0.5vw);
+  line-height: 160%;
 }
 
 .modal-body h3{
   margin: 2% 0% auto;
+  font-size: calc(0.5rem + 1.25vw);
   font-family: GameOfSquids;
 }
 
@@ -371,7 +423,12 @@ align-items: center;
   margin-bottom: 3%;
   background-color: white;
   border-radius: 12px;
-  margin: 2vmin 0;
+}
+
+.modal-cv img {
+  max-width: 100%; 
+  height: auto; 
+  width: calc(100px + 25vw);
 }
 
 .modal-video{
@@ -380,7 +437,6 @@ align-items: center;
   width: 100%;
   padding-bottom: 56.25%; 
   height: 0;
-  margin: 5vmin 0;
 }
 
 .modal-video iframe{
@@ -402,14 +458,14 @@ align-items: center;
   position: absolute;
   right: 7%;
   top: 12px;
-  font-size: calc(0.5rem + 4vmin);
+  font-size: calc(0.5rem + 3.75vw);
   font-weight: bold;
   transition-duration: 0.4s;
 }
 
 .close:hover,
 .close:focus {
-  color: var(--color-pink);
+  color: var(--color-green);
   text-decoration: none;
   transition-duration: 0.6s;
   cursor: pointer;
