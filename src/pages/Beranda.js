@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import ReactPlayer from 'react-player/youtube'
-import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import Timerdown from "../components/Countdown";
 import BarChart from "../components/BarChart";
+import Fade from "react-reveal/Fade"
+import CarouselTataCara from "../components/Carousel_TataCara";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import {
     Dice,
     Rectangle_1,
@@ -14,7 +16,6 @@ import {
     Catur,
     Path,
 }from "../assets/images/imgIndex.js"
-import CarouselTataCara from "../components/Carousel_TataCara";
 
 export default function Beranda(){
     // Kode Javascript //
@@ -39,31 +40,46 @@ export default function Beranda(){
             
             document.getElementById("message").value = "";
         } catch (err) {
-            //console.log(err)
+            console.log(err)
         }
     }
 
     return(
         // Kode HTML //
         <Container>
+            <Helmet>
+                <title>KPU FT UGM</title>
+            </Helmet>
             {/* Awal Bagian Hero*/}
             <div className="hero-container text-center">
                 <div>
-                    <h1 className="tittle font-squids">kpu ft<br/>2021 </h1>
+                    <Fade>
+                        <h1 className="tittle font-squids">kpu ft<br/>2021 </h1>
+                        <h4>Pemilihan Umum </h4>
+                        <h2 className>Ketua BEM KMFT UGM 2022 </h2>
+                    </Fade>
+                    {/* <h1 className="tittle font-squids">kpu ft<br/>2021 </h1>
                     <h4>Pemilihan Umum </h4>
-                    <h2 className>Ketua BEM KM FT UGM 2022 </h2>
+                    <h2 className>Ketua BEM KM FT UGM 2022 </h2> */}
+                    <Fade>
                     <img className="dice" src={Dice} alt="dice"></img>
+                    </Fade>
                     <div className="wait">
+                    <Fade>
                         <Timerdown/>
+                    </Fade>
                     </div>
+                    <Fade>
                     <img className="catur" src={Catur} alt="dice"></img>
                     <img className="path" src={Path} alt="dice"></img>
+                    </Fade>
                 </div>
             </div>
             {/* Akhir Bagian Hero */}
 
             {/* Awal Calon calon */}
             <div className="calon-container">
+                <Fade>
                 <div className="calon calon1">
                     <img className="rec1" src={Rectangle_1} alt="dice"></img>
                     <img className="foto_calon1" src={Calon_1} alt="dice"></img>
@@ -73,20 +89,25 @@ export default function Beranda(){
                     <img className="rec2" src={Rectangle_2} alt="dice"></img>
                     <img className="foto_calon2" src={Calon_2} alt="dice"></img>
                 </div>
+                </Fade>
+
 
                 <div className="desc1 text-center">
                     <div className="no"><h5 className="no-number">1</h5></div>
                     <h2 className="font-squids">ADIAHMAD IRFAN ZIDNY</h2>
-                    <p>Kita kawan, bukan lawan!</p>
+                    <p>
+                        Kita Kawan, Bukan Lawan!
+                        <br/>#KarenaKitaTeknik
+                        <br/>#TeknikBersihBerkah
+                    </p>
                 </div>
 
                 <div className="desc2 text-center">
                     <div className="no"><h5 className="no-number">2</h5></div>
                     <h2 className="font-squids">ANJU GERALD</h2>
                     <p>
-                        Tak janji nonstop, yang pasti top
-                        <br/>Tak banyak berkelit, penting konkrit
-                        <br/>Tak perlu membantah, pasti meriah
+                        Salam dari kami,
+                        <br/>Salam Dua Jari.
                     </p>
                 </div>
 
@@ -106,6 +127,7 @@ export default function Beranda(){
 
             {/* Awal About & Tata Cara */}
             <div className="about-container text-center">
+                <Fade>
                 <div className="about">
                     <h2 className="font-squids">Tentang Pemilu FT UGM 2021 </h2>
                     <p> Pemilihan Umum Mahasiswa Fakultas Teknik Universitas Gadjah Mada (Pemilu) adalah sarana pelaksanaan kedaulatan mahasiswa berdasarkan Anggaran Dasar/Anggaran Rumah Tangga Keluarga Mahasiswa Fakultas Teknik Universitas Gadjah Mada. </p>                     
@@ -116,8 +138,10 @@ export default function Beranda(){
                 
                 <div className="tatacara text-center">
                     <h2 className="font-squids">Tata Cara Pemilihan </h2>
-                    <CarouselTataCara/>
+                    <div className="tatacarabox"><CarouselTataCara/> </div>
                 </div>
+                </Fade>
+
 
                 <img className="path" src={Path} alt="path"></img>
             </div>
@@ -156,6 +180,7 @@ overflow: hidden;
 .wait {
     animation: show 2.5s forwards;
     opacity: 0;
+    min-height: 15vmin;
 }
 @keyframes show {
     60% {
@@ -170,10 +195,11 @@ overflow: hidden;
 .hero-container{
     display: grid;
     z-index: 0;
+    min-height: 92.5vh;
     width: 100%;
     position: relative;
     background-color: var(--color-darkblue);
-    padding: 10vmin 0;
+    padding: 20vh 0;
 }
 .hero-container .text-center{
     width: 100%;
@@ -199,7 +225,7 @@ Button{
 }
 .cd {
     display: flex;
-    padding: 0 25%;
+    padding: 0 20%;
 }
 .cd p {
     font-size: calc(0.5rem + 1vmin);
@@ -247,13 +273,11 @@ Button{
     padding-top: 10vmin;
     bottom: 0;
 }
-.foto_calon1{
-    z-index: 1;
-    height: 110%;
+.foto_calon1, .foto_calon2{
+    z-index: 0;
+    height: 97.5%;
 }
 .foto_calon2{
-    z-index: 1;
-    height: 110%;
     right: 0;
 }
 .rec1{
@@ -270,17 +294,17 @@ Button{
 }
 .desc1{
     //order: 2;
-    z-index: 2;
+    z-index: 1;
     grid-area: 1 / 2;
 }
 .desc2{
     //order: 3;
-    z-index: 2;
+    z-index: 1;
     grid-area: 2 / 1;
 }
 .logo_desc{
     //order 5 sampai 6
-    z-index: 2;
+    z-index: 1;
     grid-area: 3 / 1 / 3 / span 2;
 }
 .logo_desc img{
@@ -296,8 +320,8 @@ Button{
 }
 .no-number {
     font-weight: bold;
-    height: calc(1rem + 1.5vmin);
-    width: calc(1rem + 1.5vmin);
+    height: calc(1.5rem + 1.5vmin);
+    width: calc(1.5rem + 1.5vmin);
     transform: rotate(-45deg);
 }
 
@@ -354,8 +378,11 @@ Button{
     font-size: calc(0.5rem + 2vmin);
     font-family: montBook;
 }
-@media (min-width: 961px) {
+@media (min-width: 1025px) {
     // hero // -------------------------------------------------------
+    .hero-container{
+        padding: 10vh 0;
+    }
     .catur{
         display: inline;
         position: absolute;
@@ -387,6 +414,9 @@ Button{
             transform: rotateY(360deg);
         }
     }
+    .cd {
+        padding: 0 25%;
+    }
     .cd p {
         font-size: calc(0.5rem + 1.5vmin);
     }
@@ -394,7 +424,9 @@ Button{
     .calon-container{
         grid-template-columns: 35% 30% 35%;
     }
-    
+    .foto_calon1, .foto_calon2{
+        height: 110%;
+    }
     .calon1{
         grid-area: 1 / 1;
         &:hover .rec1{
@@ -460,6 +492,10 @@ Button{
             transition: all 0.5s ease-out;
         }
     }
+    .no-number {
+        height: calc(1rem + 1.5vmin);
+        width: calc(1rem + 1.5vmin);
+    }
     
     // about // -------------------------------------------------------
     .about{
@@ -472,7 +508,12 @@ Button{
         transform: rotate(180deg);
     }
     .tatacara{
-        padding: 0 10%;
+        padding: 0 17.5%;
+    }
+    .tatacarabox{
+        //overflow: hidden;
+        border-radius: 5px;
+        border: 4px var(--color-pink) solid;
     }
 
     // kritik dan saran // -------------------------------------------------------
