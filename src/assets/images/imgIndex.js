@@ -6,6 +6,7 @@ import Calon_2 from './calon2.webp';
 import Catur from './catur.webp';
 import Path from './path.webp'
 import ChooseCandidate from './choosecandidate.webp'
+import CV_Anju from './Daftar-Riwayat-Hidup_Anju-Gerald.webp'
 
 export{
   Dice,
@@ -16,4 +17,5 @@ export{
   Catur,
   Path,
   ChooseCandidate,
+  CV_Anju,
 }
